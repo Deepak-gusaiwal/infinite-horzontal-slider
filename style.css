@@ -147,6 +147,11 @@ nav .addbanner h1::first-letter{
     width: 100%;
     overflow: hidden;
     display: flex;
+    -webkit-mask: linear-gradient(90deg,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent);
 }
 .scrollItems{
     flex-shrink: 0;
@@ -159,6 +164,10 @@ nav .addbanner h1::first-letter{
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+.scrollbarContainer:hover .scrollItems{
+    animation-play-state: paused;
+    cursor: pointer;
 }
 .scrollItems .item{
     flex-shrink: 0;
