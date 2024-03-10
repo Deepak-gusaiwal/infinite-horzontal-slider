@@ -143,7 +143,6 @@ nav .addbanner h1::first-letter{
     margin: 0 auto;
 }
 .scrollbarContainer{
-    margin-top: 1rem;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -161,7 +160,7 @@ nav .addbanner h1::first-letter{
     color: white;
     background-color: black;
     animation-name: scrollAnim;
-    animation-duration: 5s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -174,6 +173,9 @@ nav .addbanner h1::first-letter{
     font-size: max(5vw,3rem);
     min-width: max(14vw,100px);
     text-align: center;
+    color: transparent;
+    -webkit-text-stroke: 1px white ;
+    font-family: 'luckiest guy';
 }
 
 @keyframes scrollAnim {
