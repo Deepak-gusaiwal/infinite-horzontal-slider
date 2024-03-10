@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::selection{
+    background-color: yellow;
+    color: black;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* background-color: cyan; */
+    padding-top: 0.05px;
+}
+header{
+    height: 80px;
+    margin-top: 40px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+nav{
+width: 100%;
+max-width: 1300px;
+margin: 0 auto;
+height: 100%;
+display: flex;
+justify-content: space-between;
+gap: max(6vw,2rem);
+}
+nav a.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Premier 2019';
+    font-size: max(2.5vw,2rem);
+}
+
+nav .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: 'luckiest guy';
+    overflow: hidden;
+    width:0%;
+    transform-origin: right;
+    transform: scaleX(0%);
+    transition: transform 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+nav .menu.active{
+    transform: scaleX(100%);
+    width:100%;
+}
+nav .menu a{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid black;
+}
+nav .menu a:hover{
+    background-color: rgba(0, 0, 0, 0.059);
+}
+nav .addbanner{
+    width: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'mouse memoirs';
+    overflow: hidden;
+    transition: 200ms ease;
+}
+nav .addbanner.active{
+    width: 100%;
+}
+nav .addbanner h1{
+    font-size: max(3.5vw,2rem);
+    text-wrap: nowrap;
+}
+nav .addbanner h1::first-letter{
+    color: red;
+}
+.navToggler{
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px;
+    border-radius: 5px;
+    position: relative;
+    isolation: isolate;
+    background-color: rgba(0, 0, 0, 0.108);
+    transition: 200ms ease;
+    cursor: pointer;
+}
+.navToggler:hover{
+    background-color: rgba(0, 0, 0, 0.166);
+}
+.navToggler span{
+    width: 100%;
+    background-color: black;
+    height: 3px;
+
+}
+.navToggler.active{
+    justify-content: center;
+    align-items: center;
+}
+.navToggler.active span{
+    position: absolute;
+    width: 80%;
+    transform: rotate(45deg);
+    transition: 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navToggler.active span:nth-child(1){
+    transform: rotate(-45deg);
+}
+.navToggler.active span:nth-child(2){
+    display: none;
+}
+.container-lg{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.scrollbarContainer{
+    margin-top: 1rem;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+.scrollItems{
+    flex-shrink: 0;
+    width: fit-content;
+    display: flex;
+    gap: 1rem;
+    color: white;
+    background-color: black;
+    animation-name: scrollAnim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.scrollItems .item{
+    flex-shrink: 0;
+    font-size: max(5vw,3rem);
+    min-width: max(14vw,100px);
+    text-align: center;
+}
+
+@keyframes scrollAnim {
+    from{
+        transform: translateX(0);
+    }to{
+        transform: translateX(-100%);
+    }
+    
+}
+
+
+.red{
+    background-color: red ;
+}
